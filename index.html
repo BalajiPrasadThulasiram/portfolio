@@ -455,51 +455,84 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 </article>
 <style>
 /* TOP CHIPS (row under the Skillset heading) */
-#skills-pro .top-chips {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-bottom: 18px;
+/* ================= SKILLSET POLISH PACK ================= */
+#skills-pro{
+  max-width:1100px; margin:0 auto;
+}
+#skills-pro h2.major{
+  letter-spacing:.28em;
+  margin-bottom:12px;
+}
+#skills-pro h2.major + hr,
+#skills-pro .major-underline{
+  content:""; display:block; height:2px; width:74px;
+  background:linear-gradient(90deg,rgba(255,255,255,.55),rgba(255,255,255,0));
+  border:0; margin:10px 0 18px;
 }
 
-#skills-pro .top-chips span {
-  display: inline-block;
-  padding: 8px 14px;
-  border-radius: 999px;
-  border: 1px solid rgba(255,255,255,.2);
-  background: rgba(255,255,255,.08);
-  backdrop-filter: blur(6px);
-  font-weight: 600;
-  white-space: nowrap;
-  font-size: 0.95rem;
-  letter-spacing: 0.2px;
-  transition: all 0.2s ease;
+/* Top chips row */
+#skills-pro .top-chips{ display:flex; flex-wrap:wrap; gap:10px; margin-bottom:20px; }
+#skills-pro .top-chips span{
+  display:inline-block; padding:8px 14px; border-radius:999px;
+  border:1px solid rgba(255,255,255,.18);
+  background:rgba(255,255,255,.08); backdrop-filter:blur(6px);
+  font-weight:700; white-space:nowrap; font-size:.95rem; letter-spacing:.2px;
+  transition:transform .15s ease, border-color .2s ease, background .2s ease, box-shadow .2s ease;
+}
+#skills-pro .top-chips span:hover{
+  transform:translateY(-1px);
+  border-color:rgba(255,255,255,.35);
+  background:rgba(255,255,255,.12);
+  box-shadow:0 6px 16px rgba(0,0,0,.22);
 }
 
-#skills-pro .top-chips span:hover {
-  transform: translateY(-1px);
-  border-color: rgba(255,255,255,.4);
-  background: rgba(255,255,255,.12);
-  box-shadow: 0 4px 10px rgba(0,0,0,.2);
-}  /* ← this closing brace was missing */
-
-/* MINI CHIPS under each card */
-#skills-pro .chips {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-top: 6px;
+/* Cards grid */
+#skills-pro .grid{
+  display:grid; gap:18px;
+  grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));
+}
+#skills-pro .card{
+  padding:18px; border-radius:16px;
+  border:1px solid rgba(255,255,255,.12);
+  background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+  box-shadow:0 10px 24px rgba(0,0,0,.18);
+  display:flex; flex-direction:column; gap:8px;
 }
 
-#skills-pro .chips span {
-  display: inline-block;
-  padding: 5px 10px;
-  border-radius: 999px;
-  border: 1px solid rgba(255,255,255,.15);
-  background: rgba(255,255,255,.05);
-  font-size: 0.85rem;
-  font-weight: 500;
-  color: rgba(255,255,255,.85);
+/* Subtle emphasis for first 3 (ETL) cards */
+#skills-pro .grid .card:nth-of-type(-n+3){
+  border-color:rgba(255,255,255,.22);
+  box-shadow:0 14px 28px rgba(0,0,0,.22), 0 0 0 1px rgba(255,255,255,.08) inset;
+}
+
+/* Section titles inside cards */
+#skills-pro .card h3{
+  margin:0 0 6px 0; font-size:16px; letter-spacing:.18em;
+  text-transform:uppercase; opacity:.95;
+}
+
+/* Lists */
+#skills-pro .card ul{ margin:0; padding-left:20px; }
+#skills-pro .card li{
+  margin:6px 0; line-height:1.35;
+}
+#skills-pro .card li::marker{
+  color:rgba(255,255,255,.65);
+}
+
+/* Mini chips per card */
+#skills-pro .chips{ display:flex; flex-wrap:wrap; gap:8px; margin-top:6px; }
+#skills-pro .chips span{
+  display:inline-block; padding:5px 10px; border-radius:999px;
+  border:1px solid rgba(255,255,255,.14);
+  background:rgba(255,255,255,.05);
+  font-size:.85rem; font-weight:600; color:rgba(255,255,255,.9);
+}
+
+/* Responsive tweaks */
+@media (max-width:480px){
+  #skills-pro .card{ padding:16px; }
+  #skills-pro .card h3{ letter-spacing:.12em; }
 }
 
 </style>
