@@ -454,6 +454,7 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
   </section>
 </article>
 <style>
+/* TOP CHIPS (row under the Skillset heading) */
 #skills-pro .top-chips {
   display: flex;
   flex-wrap: wrap;
@@ -480,7 +481,10 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
   border-color: rgba(255,255,255,.4);
   background: rgba(255,255,255,.12);
   box-shadow: 0 4px 10px rgba(0,0,0,.2);
-	#skills-pro .chips {
+}  /* ← this closing brace was missing */
+
+/* MINI CHIPS under each card */
+#skills-pro .chips {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
@@ -497,6 +501,7 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
   font-weight: 500;
   color: rgba(255,255,255,.85);
 }
+
 </style>
 
 <br><br>
